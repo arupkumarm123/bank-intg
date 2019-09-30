@@ -37,8 +37,8 @@ public class BankAccountApplication {
 	@Bean
 	BankAccountRepository repository() {
 		BankAccountRepository repository = new  BankAccountRepository();
-		repository.add(new Account(3L, "3", "branch-a" , "4000-1" , AccountType.SAVINGS,"testKey-1"));
-		repository.add(new Account(4L, "3", "branch-a" , "4000-2" , AccountType.SAVINGS,"testKey-2"));
+		repository.add(new Account(3L, "4", "branch-a" , "4000-1" , AccountType.SAVINGS,"testKey-1"));
+		repository.add(new Account(4L, "4", "branch-a" , "4000-2" , AccountType.SAVINGS,"testKey-2"));
 
 		return repository;
 	}
@@ -46,11 +46,11 @@ public class BankAccountApplication {
 	@Bean
 	BankTransactionRepository transactionRepository() {
 		BankTransactionRepository  repo = new BankTransactionRepository();
-		repo.add(3L, new Transaction(TransactionType.DEBIT, null, 1000L, "4000-1" , 3L , 3L));
-		repo.add(3L, new Transaction(TransactionType.CREDIT, null, 2700L, "4000-1" , 3L , 3L));
+		repo.add(3L, new Transaction(TransactionType.DEBIT, null, 1000L, "4000-1" , 3L , 4L));
+		repo.add(3L, new Transaction(TransactionType.CREDIT, null, 2700L, "4000-1" , 3L , 4L));
 
-		repo.add(3L, new Transaction(TransactionType.DEBIT, null, 100000, "4000-1" , 3L , 3L));
-		repo.add(3L, new Transaction(TransactionType.DEBIT, null, 20062, "4000-1" , 3L , 3L));
+		repo.add(3L, new Transaction(TransactionType.DEBIT, null, 100000, "4000-1" , 3L , 4L));
+		repo.add(3L, new Transaction(TransactionType.DEBIT, null, 20062, "4000-1" , 3L , 4L));
 		
 		return repo;
 	}
